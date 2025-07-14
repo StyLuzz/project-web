@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Portfolio Incukaruhun</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f3f7fc;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 40px;
+      gap: 20px;
+      background-color: #fff;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .hero button {
+      margin-top: 15px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .about {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
+
+    .about h2 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .biodata {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px 40px;
+      background-color: #f0f0f0;
+    }
+
+    .biodata div {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .biodata b {
+      color: #007bff;
+    }
+
+    .portfolio {
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
+
+    .portfolio h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 30px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .project {
+      background-color: white;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+    }
+
+    .project h4, .project p {
+      margin: 10px;
+    }
+
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Website Portfolio Incukaruhun</strong></div>
+    <nav>
+      <a href="#">Header</a>
+      <a href="#">Biodata</a>
+      <a href="#">Portofolio</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Selamat Datang di Website Portfolio Incukaruhun</h1>
+      <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks seperti ini.</p>
+      <button>Pelajari Lebih Lanjut</button>
+    </div>
+    <div>
+      <img src="D:\Campus Life\Belajar\Eduwork - Fullstack Web Programming\Ads Website PMB.png" alt="Foto Profil">
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>A brief introduction about myself</p>
+  </section>
+
+  <section class="biodata">
+    <div><b>Full Name:</b> <br>Iyad Supriadin</div>
+    <div><b>Education:</b>  <br>S1 Informatika</div>
+    <div><b>Pekerjaan:</b>  <br>Mahasiswa</div>
+    <div><b>Contact:</b>  <br>iyadsupriadin69@gmail.com</div>
+    <div><b>Hobi:</b>  <br>Traveling, Coding</div>
+    <div><b>Alamat:</b>  <br>Sukabumi</div>
+  </section>
+
+  <section class="portfolio">
+    <h2>Portofolio</h2>
+    <div class="portfolio-grid">
+      <div class="project">
+        <img src="D:\Campus Life\Belajar\Eduwork - Fullstack Web Programming\Ads Prodi IF.png" alt="Proyek 1">
+        <h4>Proyek 1</h4>
+        <p>Deskripsi proyek 1.</p>
+      </div>
+      <div class="project">
+        <img src="D:\Campus Life\Belajar\Eduwork - Fullstack Web Programming\Ads Prodi SI.png" alt="Proyek 2">
+        <h4>Proyek 2</h4>
+        <p>Deskripsi proyek 2.</p>
+      </div>
+      <div class="project">
+        <img src="D:\Campus Life\Belajar\Eduwork - Fullstack Web Programming\Ads Prodi AK.png" alt="Proyek 3">
+        <h4>Proyek 3</h4>
+        <p>Deskripsi proyek 3.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 Incukaruhun. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incukaruhun Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        body {
+            padding-top: 56px; /* Memberi ruang untuk navbar fixed-top */
+            font-family: 'Poppins', sans-serif; /* Font yang lebih modern */
+        }
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-img {
+            max-width: 300px;
+            border: 10px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .btn-orange {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+        .btn-orange:hover {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #343a40;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        .about-item .icon {
+            font-size: 2rem;
+            color: #007bff;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+            background-color: #007bff;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><span style="color: #007bff;">INCU</span>KARUHUN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About me</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <h2><p class="text-secondary">Hi, I'm</p></h2>
+                    <h1 class="display-4 fw-bold">Iyad Supriadin</h1>
+                    <h2 class="fw-bold" style="color: #007bff;">Content Creator</h2>
+                    <p class="text-secondary my-4">Lorem ipsum dolor sit amet consectetur, tristique amet sed massa nibh lectus. Nunc in aliquet donec morbi convallis proin.</p>
+                    <button type="button" class="btn btn-orange btn-lg px-4" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        Hire Me
+                    </button>
+                </div>
+                <div class="col-md-6 text-center mt-5 mt-md-0">
+                    <img src="D:\Campus Life\Campus BSI\My Data\Calon S.Kom().jpg" alt="Iyad Supriadin" class="img-fluid rounded-circle hero-img">
+                    <div class="social-icons mt-4">
+                        <a href="https://www.instagram.com/iyaddxprdn"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@incukaruhun_"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/in/iyad-supriadin/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/StyLuzz/"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">About Me</h2>
+                <p class="text-secondary">Lorem ipsum dolor sit amet consectetur, tristique amet sed massa nibh lectus. Nunc in aliquet donec morbi convallis pretium.</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="about-item">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <h5 class="fw-bold mt-3">Full Name</h5>
+                        <p class="text-secondary">Iyad Supriadin</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="about-item">
+                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                        <h5 class="fw-bold mt-3">Education</h5>
+                        <p class="text-secondary">Universitas Bina Sarana Informatika</p>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="about-item">
+                        <span class="icon"><i class="fas fa-briefcase"></i></span>
+                        <h5 class="fw-bold mt-3">Work</h5>
+                        <p class="text-secondary">Student</p>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="about-item">
+                        <span class="icon"><i class="fas fa-envelope"></i></span>
+                        <h5 class="fw-bold mt-3">Contact</h5>
+                        <p class="text-secondary">iyadsupriadin69@gmail.com</p>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="about-item">
+                        <span class="icon"><i class="fas fa-heart"></i></span>
+                        <h5 class="fw-bold mt-3">Hoby</h5>
+                        <p class="text-secondary">Coding, Traveling, Camping</p>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 mb-4">
+                     <div class="about-item">
+                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <h5 class="fw-bold mt-3">Address</h5>
+                        <p class="text-secondary">Sukabumi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">My Projects</h2>
+                <p class="text-secondary">Lorem ipsum dolor sit amet consectetur, tristique amet sed massa nibh lectus.</p>
+            </div>
+            <ul class="nav nav-pills justify-content-center mb-4">
+                <li class="nav-item"><a class="nav-link" href="#">All</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Design Grafis</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Content Writer</a></li>                
+            </ul>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="D:\Campus Life\Belajar\Eduwork - Fullstack Web Programming\Ads Prodi IF.png" class="card-img-top" alt="Proyek 1">                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Program Studi Informatika</h5>
+                            <p class="card-text text-secondary">Design Grafis</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="D:\Campus Life\Belajar\Eduwork - Fullstack Web Programming\Ads Prodi SI.png" class="card-img-top" alt="Proyek 2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Program Studi Sistem Informasi</h5>
+                            <p class="card-text text-secondary">Design Grafis</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <img src="D:\Campus Life\Belajar\Eduwork - Fullstack Web Programming\Ads Prodi AK.png" class="card-img-top" alt="Proyek 3">                   
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Program Studi Akuntansi</h5>
+                            <p class="card-text text-secondary">Design Grafis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="text-center py-4 bg-dark text-white">
+        <div class="container">
+            <p class="mb-0">© 2025 Incukaruhun. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Siap untuk memulai proyek baru? Hubungi saya sekarang atau kirimkan pesan langsung.</p>
+                    <p class="fw-bold"><i class="fas fa-envelope me-2"></i> iyadsupriadin69@gmail.com</p>
+                    <p class="fw-bold"><i class="fa">&#xf232;</i> 085694560698</p> 
+                    <hr>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="name" aria-describedby="emailHelp" required>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-orange">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

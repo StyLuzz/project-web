@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Produk (JavaScript)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Katalog Produk</h1>
+
+        <div id="filter-buttons" class="text-center mb-5">
+            <button class="btn btn-outline-primary filter-btn" data-kategori="semua">Semua</button>
+            <button class="btn btn-outline-primary filter-btn" data-kategori="elektronik">Elektronik</button>
+            <button class="btn btn-outline-primary filter-btn" data-kategori="pakaian">Pakaian</button>
+            <button class="btn btn-outline-primary filter-btn" data-kategori="aksesoris">Aksesoris</button>
+        </div>
+
+        <div id="product-list" class="row">
+            </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Array Data Produk
+            const products = [
+                {
+                    nama: "Smartphone Pro X",
+                    harga: 5999000,
+                    deskripsi: "Smartphone canggih dengan kamera 108MP dan layar AMOLED.",
+                    gambar: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    kategori: "elektronik"
+                },
+                {
+                    nama: "T-Shirt Katun Premium",
+                    harga: 150000,
+                    deskripsi: "Kaos nyaman dari bahan katun premium, cocok untuk sehari-hari.",
+                    gambar: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    kategori: "pakaian"
+                },
+                {
+                    nama: "Laptop Gaming Legion",
+                    harga: 15500000,
+                    deskripsi: "Laptop bertenaga tinggi untuk gaming dan pekerjaan berat.",
+                    gambar: "https://images.unsplash.com/photo-1640955014216-75201056c829?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    kategori: "elektronik"
+                },
+                {
+                    nama: "Jam Tangan Klasik",
+                    harga: 850000,
+                    deskripsi: "Jam tangan elegan dengan strap kulit asli.",
+                    gambar: "https://images.unsplash.com/photo-1488132828189-4e416661b680?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    kategori: "aksesoris"
+                },
+                {
+                    nama: "Hoodie Polos",
+                    harga: 250000,
+                    deskripsi: "Hoodie hangat dan stylish untuk segala suasana.",
+                    gambar: "https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?q=80&w=1072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    kategori: "pakaian"
+                },
+                {
+                    nama: "Wireless Headphone",
+                    harga: 750000,
+                    deskripsi: "Headphone nirkabel dengan kualitas suara jernih dan bass mendalam.",
+                    gambar: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    kategori: "elektronik"
+                }
+            ];
+
+            const productListContainer = document.getElementById('product-list');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            // Fungsi untuk menampilkan produk ke halaman
+            const displayProducts = (productsToDisplay) => {
+                // Kosongkan container terlebih dahulu
+                productListContainer.innerHTML = ''; 
+
+                // Jika tidak ada produk yang cocok, tampilkan pesan
+                if (productsToDisplay.length === 0) {
+                    productListContainer.innerHTML = '<p class="text-center text-muted">Produk tidak ditemukan.</p>';
+                    return;
+                }
+                
+                // Looping menggunakan .map() untuk membuat elemen HTML untuk setiap produk
+                productsToDisplay.map(product => {
+                    // Format harga ke dalam format Rupiah
+                    const formattedPrice = new Intl.NumberFormat('id-ID', {
+                        style: 'currency',
+                        currency: 'IDR',
+                        minimumFractionDigits: 0
+                    }).format(product.harga);
+
+                    // Buat elemen card untuk setiap produk
+                    const productCard = `
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="${product.gambar}" class="card-img-top" alt="${product.nama}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${product.nama}</h5>
+                                    <p class="card-text">${product.deskripsi}</p>
+                                    <h6 class="card-subtitle mb-2 fw-bold">${formattedPrice}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    // Tambahkan card ke dalam container
+                    productListContainer.innerHTML += productCard;
+                });
+            };
+
+            // Logika untuk filter
+            filterButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const kategori = event.target.dataset.kategori;
+                    
+                    let filteredProducts;
+
+                    if (kategori === 'semua') {
+                        filteredProducts = products; // Tampilkan semua produk
+                    } else {
+                        // Gunakan .filter() untuk menyaring produk berdasarkan kategori
+                        filteredProducts = products.filter(product => product.kategori === kategori);
+                    }
+
+                    displayProducts(filteredProducts); // Tampilkan produk yang sudah difilter
+                });
+            });
+
+
+            // Tampilkan semua produk saat halaman pertama kali dimuat
+            displayProducts(products);
+
+        });
+    </script>
+
+</body>
+</html>

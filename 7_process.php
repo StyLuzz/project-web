@@ -43,7 +43,7 @@
                 }
                 ?>
                 <hr>
-                <a href="form_html.html" class="btn btn-primary">Kembali ke Form</a>
+                <a href="7_form.html" class="btn btn-primary">Kembali ke Form</a>
             </div>
         </div>
     </div>
